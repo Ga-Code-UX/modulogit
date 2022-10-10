@@ -1,3 +1,5 @@
+// código da primeira tabela sobre o curso e as disciplinas
+
 var dados =[];
 
 function PopulaTabela(){
@@ -13,14 +15,11 @@ function PopulaTabela(){
             <tr>
                 <td>${item.ID}</td>
                 <td>${item.NomeCurso} </td>
-                <td>${item.Disciplinas} </td>
-                <td>${item.NomeProfessores} </td>
-                <td> ${item.DtNascimentoProfessores} </td>
-                <td> ${item.SalarioProfessores} </td>
-                <td>${item.NomeAlunos}</td>
-                <td>${item.DtNascimentoAlunos}</td>
-                <td>${item.MatriculaAlunos}</td>
-                <td>${item.NotaAlunos}</td>
+                <td>${item.Semestre} </td>
+                <td>${item.Disciplina1} </td>
+                <td> ${item.Disciplina2} </td>
+                <td> ${item.Disciplina3} </td>
+    
               
                 <td><button type="button" class="btn btn-dark" onclick="javascritp:EditaRegistro(${item.ID});"><i class="fa fa-edit" /></button></td>
                 <td><button type="button" class="btn btn-primary" onclick="javascritp:ApagarRegistro(${item.ID});"><i class="fa fa-trash"/></button></td>
@@ -56,15 +55,13 @@ function EditaRegistro(id){
         if(item.ID == id){
             $("#hdID").val(item.ID);
             $("#txtNomeCurso").val(item.NomeCurso);
-            $("#txtDisciplinas").val(item.Disciplinas);
-            $("#txtNomeProfessores").val(item.NomeProfessores);
-            $("#txtDtNascimentoProfessores").val(item.DtNascimentoProfessores);
-            $("#txtSalarioProfessores").val(item.SalarioProfessores);
+            $("#txtSemestre").val(item.Semestre);
+            $("#txtDisciplina1").val(item.Disciplina1);
+            $("#txtDisciplina2").val(item.Disciplina2);
+            $("#txtDisciplina3").val(item.Disciplina3);
             //$("#txtDtNascimentoProfessor").val(item.DtNascimentoProfessor.substr(6,4) + "-" + item.DtNascimentoProfessor.substr(3,2) + "-" + item.DtNascimentoProfessor.substr(0,2));
-            $("#txtNomeAlunos").val(item.NomeAlunos);
-            $("#txtDtNascimentoAlunos").val(item.DtNascimentoAlunos);
-            $("#txtMatriculaAlunos").val(item.MatriculaAlunos);
-            $("#txtNotaAlunos").val(item.NotaAlunos);
+        
+          
 
         }
     })
@@ -85,14 +82,11 @@ $(function(){
             //evento de clicar no butão salvar com jquery
             let _id = $("#hdID").val();
             let NomeCurso = $("#txtNomeCurso").val();
-            let Disciplinas = $("#txtDisciplinas").val();
-            let NomeProfessores = $("#txtNomeProfessores").val();
-            let DtNascimentoProfessores = $("#txtDtNascimentoProfessores").val();
-            let SalarioProfessores = $("#txtSalarioProfessores").val();
-            let NomeAlunos = $("#txtNomeAlunos").val();
-            let DtNascimentoAlunos= $("#txtDtNascimentoAlunos").val();
-            let MatriculaAlunos = $("#txtMatriculaAlunos").val();
-            let NotaAlunos = $("#txtNotaAlunos").val();
+            let Semestre = $("#txtSemestre").val();
+            let Disciplina1 = $("#txtDisciplina1").val();
+            let Disciplina2 = $("#txtDisciplina2").val();
+            let Disciplina3 = $("#txtDisciplina3").val();
+        
 
           // val significa velho, entrega o valor digitado em um campo com o id passado no seletor, ou seja pega o id
             
@@ -104,15 +98,10 @@ $(function(){
                 let registro = {};
 
                 registro.NomeCurso = NomeCurso;
-                registro.Disciplinas = Disciplinas;
-                registro.NomeProfessores = NomeProfessores;
-                registro.DtNascimentoProfessores = DtNascimentoProfessores;
-                registro.SalarioProfessores = SalarioProfessores;
-                registro.NomeAlunos = NomeAlunos;
-                registro.DtNascimentoAlunos = DtNascimentoAlunos;
-                registro.MatriculaAlunos = MatriculaAlunos;
-                registro.NotaAlunos = NotaAlunos;
-
+                registro.Semestre = Semestre;
+                registro.Disciplina1 = Disciplina1;
+                registro.Disciplina2 = Disciplina2;
+                registro.Disciplina3 = Disciplina3;
                 registro.ID = dados.length + 1;
                 dados.push(registro); // ação de adição
             }
@@ -120,14 +109,11 @@ $(function(){
                 dados.forEach(function(item){
                     if(item.ID == _id){
                         item.NomeCurso = NomeCurso;
-                        item.Disciplinas = Disciplinas;
-                        item.NomeProfessores = NomeProfessores;
-                        item.DtNascimentoProfessores = DtNascimentoProfessores;
-                        item.SalarioProfessores = SalarioProfessores;
-                        item.NomeAlunos = NomeAlunos;
-                        item.DtNascimentoAlunos = DtNascimentoAlunos;
-                        item.MatriculaAlunos = MatriculaAlunos;
-                        item.NotaAlunos = NotaAlunos;
+                        item.Semestre = Semestre;
+                        item.Disciplina1 = Disciplina1;
+                        item.Disciplina2 = Disciplina2;
+                        item.Disciplina3 = Disciplina3;
+                    
                     }
                 })
             }
@@ -139,16 +125,14 @@ $(function(){
             //Limpeza
             $("#hdID").val("0");
             $("#txtNomeCurso").val("");// para limpar os dados quando preenche o val() com aspas dentro ele limpa.
-            $("#txtDisciplinas").val("");
-            $("#txtNomeProfessores").val("");
-            $("#txtDtNascimentoProfessores").val("");
-            $("#txtSalarioProfessores").val("");
-            $("#txtNomeAlunos").val("");
-            $("#txtDtNascimentoAlunos").val("");
-            $("#txtMatriculaAlunos").val("");
-            $("#txtNotaAlunos").val("");
-
+            $("#txtSemestre").val("");
+            $("#txtDisciplina1").val("");
+            $("#txtDisciplina2").val("");
+            $("#txtDisciplina3").val("");
+        
             PopulaTabela();
     });
 
 })
+
+
