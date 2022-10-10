@@ -7,6 +7,9 @@
     --color5:#45424b;
     --color6:#919191;
     --color7:#aaa;
+    --color-first:#4ABDAC;
+    --color-white:#fff;
+    --color-clean:#DFDCE3;
 }
 *{
     padding: 0;
@@ -24,15 +27,18 @@
     background: #cde6f6;
 }
 .h3{
-    color: var(--color3);
     top: 2.5rem;
-    text-align: center;  
+    text-align: center; 
+    color: var(--color-white);
+    font-size: 5rem;
+    text-shadow: 0.3rem .2rem rgba(0,0,0,.3); 
+    font-weight: 900;
 }
 body {
-background:var(--color2) ;
 font-family: 'Lora', serif;
 font-style: normal;
-font-weight: 300;
+font-weight: 900;
+background: linear-gradient(#4ABDAC,var(--color-first));
 
 }
 img{
@@ -58,7 +64,7 @@ img{
     
 }
 .logo h3{
-    color: var(--color5);
+    color: var(--color-white);
     font-size: 1.55rem;
     line-height: 1.2;
     font-weight: 700;
@@ -103,14 +109,14 @@ header .container{
     justify-content: center;
 }
 
-.big-title{
+.big_title {
     font: 1.4rem;
-    color: var(--color5);
+    color: var(--color-white);
     line-height: 1.4;
     font-weight: 900;
 }
 .text{
-    color: var(--color6);
+    color: var(--color-white);
     font-size:1.1rem ;
     margin: 1.9rem 0 2.5rem; 
     max-width: 600px;
@@ -127,9 +133,10 @@ header .container{
   }
 
 footer {
-    background:var(--color6);
-    color: #ffffff;
+    background:var(--color-clean);
+    color:var(--color3);
     padding: 80px 0px;
+    font-weight: 900;
     position: relative;
 }
 
@@ -138,6 +145,11 @@ footer .footer-copyright {
 }
 footer .col-md-4{
     margin-left: 8rem;
+}
+footer .col-md-4 .email {
+    color: var(--color3);
+    font-weight: 900;
+    text-decoration: none;
 }
  i.fa.fa-globe, i.fa.fa-phone-square, i.fa.fa-envelope{
     font-size: 0.95rem;
