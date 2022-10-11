@@ -2,7 +2,7 @@
 :root{
     --color1:#64bcf4;
     --color2:#ffffff;
-    --color3:#312f3a;
+    --color-dark:#111;
     --color4:#5bacdf;
     --color5:#45424b;
     --color6:#919191;
@@ -10,6 +10,7 @@
     --color-first:#4ABDAC;
     --color-white:#fff;
     --color-clean:#DFDCE3;
+    --color-third:#F78733;
 }
 *{
     padding: 0;
@@ -23,8 +24,15 @@
     text-align: center;
    
 }
+#tblDados th,#tblDados1 th{
+    color: var(--color-dark);
+    text-shadow: 0.1rem .1rem rgba(0,0,0,.2);
+}
+#tblDados td,#tblDados1 td{
+    color: var(--color-third);
+}
 .blue{
-    background: #cde6f6;
+    background: var(--color-white);
 }
 .h3{
     top: 2.5rem;
@@ -91,17 +99,7 @@ header .container{
     align-items: center;
     padding: 1rem 2rem;
 }
-.btn1{
-    display: inline-block;
-    padding: 0.9rem 1.9rem;
-    color: var(--color2);
-    background-color: var(--color1);
-    transition: .3s;
-}
-.btn1:hover{
-    background-color: var(--color4);
-    transform: scale(1) !important;
-}
+
 .show-area .container{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -120,6 +118,7 @@ header .container{
     font-size:1.1rem ;
     margin: 1.9rem 0 2.5rem; 
     max-width: 600px;
+    font-weight: 300;
     line-height: 2.3;
 }
 
@@ -134,7 +133,7 @@ header .container{
 
 footer {
     background:var(--color-clean);
-    color:var(--color3);
+    color:var(--color-dark);
     padding: 80px 0px;
     font-weight: 900;
     position: relative;
@@ -157,5 +156,19 @@ footer .col-md-4 .email {
     margin-right: 0.6rem;
     margin-top: -0.6rem;
     
+}
+.btn1{
+    outline: none;
+    border: none;
+    background: var(--color1);
+    color: var(--color-white);
+    cursor: pointer;
+    height: 3.5rem;
+    width: 9rem;
+    font-size: 1rem;
+    box-shadow: 0 .2rem .5rem rgba(0,0,0,.3);
+}
+.btn1:hover{
+    letter-spacing: .2rem;
 }
 
