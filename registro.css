@@ -24,11 +24,11 @@
     text-align: center;
    
 }
-#tblDados th,#tblDados1 th{
+#tblDados th,#tblDados1 th,#tblDados2 th{
     color: var(--color-dark);
     text-shadow: 0.1rem .1rem rgba(0,0,0,.2);
 }
-#tblDados td,#tblDados1 td{
+#tblDados td,#tblDados1 td,#tblDados2 td{
     color: var(--color-third);
 }
 .blue{
@@ -83,6 +83,7 @@ i.fa.fa-registered{
     color: var(--color1);
     margin-right: 0.6rem;
     margin-top: -0.6rem;
+    text-shadow: 0.2rem .2rem rgba(0,0,0,.3);
 }
 .container{
     position: relative;
@@ -137,6 +138,7 @@ footer {
     padding: 80px 0px;
     font-weight: 900;
     position: relative;
+    text-shadow: 0.1rem .1rem rgba(0,0,0,.2);
 }
 
 footer .footer-copyright {
@@ -144,6 +146,9 @@ footer .footer-copyright {
 }
 footer .col-md-4{
     margin-left: 8rem;
+}
+footer .col-md-5 h3{
+    text-shadow: 0.1rem .1rem rgba(0,0,0,.2);
 }
 footer .col-md-4 .email {
     color: var(--color3);
@@ -155,6 +160,7 @@ footer .col-md-4 .email {
     color: var(--color1);
     margin-right: 0.6rem;
     margin-top: -0.6rem;
+    text-shadow: 0.1rem .1rem rgba(0,0,0,.2);
     
 }
 .btn1{
@@ -172,3 +178,93 @@ footer .col-md-4 .email {
     letter-spacing: .2rem;
 }
 
+
+/*media queries para a página principal apenas*/
+
+@media(max-width:1360px){
+   
+    .btn1{
+        margin: 2rem;
+    }
+   
+   
+    footer .col-md-4{
+        margin: 2rem;
+        margin-left: 10rem;
+       
+    } 
+    footer{
+        margin-top: 43%;
+    }
+}
+
+@media(max-width:1080px){
+   
+    .btn1{
+        margin: 2rem;
+    }
+   
+    
+    footer .col-md-4{
+        margin: 2rem;
+        margin-left: 10rem;
+       
+    } 
+    footer{
+        margin-top: 43%;
+    }
+}
+@media(max-width:960px){
+   
+    .btn1{
+        margin: 1rem;
+    }
+   
+ 
+    footer .col-md-4{
+        margin: 2rem;
+        margin-left: 5rem;
+       
+    } 
+   
+}
+@media (max-width:768px){
+    .btn1{
+        margin: 1rem;
+    }
+    
+    footer .col-md-4{
+        margin: 2rem;
+        margin-left: -0.5rem;
+       
+    } 
+   
+}
+@media (max-width:550px){
+    .btn1{
+        margin: 1rem;
+    }
+    
+    footer .col-md-4{
+        margin: 2rem;
+        margin-left: -0.5rem;
+       
+    } 
+   
+}
+
+@media (max-width:480px){
+    .btn1{
+        margin: 1rem;
+    }
+    
+    footer .col-md-4{
+        margin: 2rem;
+        margin-left: -0.5rem;
+       
+    } 
+  
+ }
+
+ 
+ /* fim da media screen para a páginal principal*/

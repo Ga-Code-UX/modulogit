@@ -59,7 +59,7 @@ function EditaRegistro(id){
             $("#txtDisciplina1").val(item.Disciplina1);
             $("#txtDisciplina2").val(item.Disciplina2);
             $("#txtDisciplina3").val(item.Disciplina3);
-            //$("#txtDtNascimentoProfessor").val(item.DtNascimentoProfessor.substr(6,4) + "-" + item.DtNascimentoProfessor.substr(3,2) + "-" + item.DtNascimentoProfessor.substr(0,2));
+           
         
           
 

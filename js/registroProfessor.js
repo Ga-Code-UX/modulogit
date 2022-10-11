@@ -1,4 +1,4 @@
-// código da segunda tabela sobre os professores e seus respectivos salários
+// código da tabela 1 sobre os professores e seus respectivos salários em determinado curso
 
 var dadosProfessor =[];
 
@@ -6,7 +6,7 @@ function PopulaTabelaProfessor(){
     //verificar se a variavel dados é um array
     if(Array.isArray(dadosProfessor)){
         
-        localStorage.setItem("__dados__", JSON.stringify(dadosProfessor)); // usa o json.strinfy para transformar os dados
+        localStorage.setItem("__dadosProfessor__", JSON.stringify(dadosProfessor)); // usa o json.strinfy para transformar os dados
         $("#tblDados1 tbody").html(""); // limpando as  linhas das tabelas
         
         dadosProfessor.forEach(function(item){
@@ -40,13 +40,13 @@ function PopulaTabelaProfessor(){
 }
 //pedi id pro parametro
 function ApagarRegistroProfessor(idProfessor){
-    let _confirm = confirm("Deseja realmente excluir esse registro?"); // confirm em js abre a caixa de dialogo
+    let _confirmProfessor = confirm("Deseja realmente excluir esse registro?"); // confirm em js abre a caixa de dialogo
     // se o usuário clica em Ok, o if abaixo executa se não não faz nada
-    if(_confirm){
-        for(let i = 0; i< dadosProfessor.length;i++){
+    if(_confirmProfessor){
+        for(let y = 0; y< dadosProfessor.length;y++){
           /// esse loop varrerá e também analisará o array dados e para cada varredura irá perguntar se o ID do array é igual ao id que está recebendo por parametro
-            if(dadosProfessor[i].ID == idProfessor){
-                dadosProfessor.splice(i,1) // função splice apaga o elemento do array
+            if(dadosProfessor[y].ID == idProfessor){
+                dadosProfessor.splice(y,1) // função splice apaga o elemento do array
             }
         }
         PopulaTabelaProfessor(); //  escreve novamente as tabelas
@@ -60,8 +60,8 @@ function EditaRegistroProfessor(idProfessor){
     dadosProfessor.forEach(function(item){
         if(item.ID == idProfessor){
             $("#hdID1").val(item.ID);
-            $("#txtNomeCurso1").val(item.NomeCurso);
-            $("#txtSemestre1").val(item.Semestre);
+            $("#txtNomeCurso1").val(item.NomeCurso1);
+            $("#txtSemestre1").val(item.Semestre1);
             $("#txt_nome_professor_disciplina1").val(item.Nome_professor_disciplina1);
             $("#txtDtNascimento1").val(item.DtNascimento1.substr(6,4) + "-" + item.DtNascimento1.substr(3,2) + "-" + item.DtNascimento1.substr(0,2));
             $("#txtSalario1").val(item.Salario1);
@@ -77,7 +77,7 @@ function EditaRegistroProfessor(idProfessor){
 
 $(function(){
     // executa o carregar da tela
-    dadosProfessor = JSON.parse(localStorage.getItem("__dados__"));// armazenando estruturação de json em formato de texto, leitura usual está executando no abri da tela
+    dadosProfessor = JSON.parse(localStorage.getItem("__dadosProfessor__"));// armazenando estruturação de json em formato de texto, leitura usual está executando no abri da tela
     
     if (dadosProfessor != null) {
         PopulaTabelaProfessor();
@@ -92,13 +92,13 @@ $(function(){
             let NomeCurso1 = $("#txtNomeCurso1").val();
             let Semestre1 = $("#txtSemestre1").val();
             let Nome_professor_disciplina1 = $("#txt_nome_professor_disciplina1").val();
-            let DtNascimento1 = $("#txtDtNascimento1").val();
+            let DtNascimento1 = new Date ($("#txtDtNascimento1").val()).toLocaleDateString("pt-br", {timeZone: "UTC"});
             let Salario1 = $("#txtSalario1").val();
             let Nome_professor_disciplina2 = $("#txt_nome_professor_disciplina2").val();
-            let DtNascimento2 = $("#txtDtNascimento2").val();
+            let DtNascimento2 = new Date ($("#txtDtNascimento2").val()).toLocaleDateString("pt-br", {timeZone: "UTC"});
             let Salario2 = $("#txtSalario2").val();
             let Nome_professor_disciplina3 = $("#txt_nome_professor_disciplina3").val();
-            let DtNascimento3 = $("#txtDtNascimento3").val();
+            let DtNascimento3 = new Date ($("#txtDtNascimento3").val()).toLocaleDateString("pt-br", {timeZone: "UTC"});
             let Salario3 = $("#txtSalario3").val();
          ;
 
